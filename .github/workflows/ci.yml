@@ -18,14 +18,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Run Full Regression Tests
+        run: mvn ekstazi:clean test
+
       - name: Cache Ekstazi
         uses: actions/cache@v3
         with:
           path: .ekstazi
-          key: ekstazi-cache-${{ github.sha }}
-
-      - name: Run Full Regression Tests
-        run: mvn ekstazi:clean test
+          key: ekstazi-cache-${{ github.ref }}-latest
+          restore-keys: |
+            ekstazi-cache-
 
   selective-regression:
     name: Selective Regression Test
@@ -43,7 +45,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: .ekstazi
-          key: ekstazi-cache-${{ github.sha }}
+          key: ekstazi-cache-${{ github.ref }}-latest
+          restore-keys: |
+            ekstazi-cache-
 
       - name: Run Selective Regression Tests
         run: |
