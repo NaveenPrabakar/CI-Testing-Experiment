@@ -1,3 +1,11 @@
+name: CI with Ekstazi RTS
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
 jobs:
   full-regression:
     name: Full Regression Test
