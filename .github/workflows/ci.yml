@@ -36,4 +36,5 @@ jobs:
 
       - name: Run Selective Regression Tests
         run: |
+          mvn ekstazi:restore
           mvn ekstazi:select test
