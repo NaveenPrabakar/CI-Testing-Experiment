@@ -1,11 +1,3 @@
-name: CI with Ekstazi RTS
-
-on:
-  push:
-    branches: ["**"]
-  pull_request:
-    branches: ["**"]
-
 jobs:
   full-regression:
     name: Full Regression Test
@@ -18,9 +10,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Cache Ekstazi
+        uses: actions/cache@v3
+        with:
+          path: .ekstazi
+          key: ekstazi-cache-${{ github.sha }}
+
       - name: Run Full Regression Tests
-        run: |
-          mvn ekstazi:clean test
+        run: mvn ekstazi:clean test
 
   selective-regression:
     name: Selective Regression Test
@@ -33,6 +30,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Restore Ekstazi Cache
+        uses: actions/cache@v3
+        with:
+          path: .ekstazi
+          key: ekstazi-cache-${{ github.sha }}
 
       - name: Run Selective Regression Tests
         run: |
