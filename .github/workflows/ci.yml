@@ -18,8 +18,5 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Run Ekstazi clean
-        run: mvn ekstazi:clean
-
-      - name: Run Regression Testing
-        run: mvn test
+      - name: Run Regression Testing 
+        run: mvn clean test -Dekstazi.skip=true
