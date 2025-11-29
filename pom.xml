@@ -14,6 +14,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <ekstazi.version>5.3.0</ekstazi.version>
+        <surefire.argLine/> 
     </properties>
 
     <repositories>
@@ -51,14 +52,18 @@
                 <groupId>org.ekstazi</groupId>
                 <artifactId>ekstazi-maven-plugin</artifactId>
                 <version>${ekstazi.version}</version>
+                
                 <executions>
                     <execution>
                         <id>doit</id>
                         <phase>process-test-classes</phase>
                         <goals>
                             <goal>select</goal>
-                            <goal>restore</goal> 
                         </goals>
+                        <configuration>
+                            <restore>true</restore>
+                            <surefire.argLine>@{surefire.argLine}</surefire.argLine>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -68,8 +73,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <argLine>${surefire.argLine}</argLine> 
                     <excludesFile>${project.build.testOutputDirectory}/.ekstazi.excludes</excludesFile>
-                    <forkCount>0</forkCount>
+                    
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
@@ -81,7 +87,8 @@
                         <groupId>org.ekstazi</groupId>
                         <artifactId>ekstazi-agent</artifactId>
                         <version>${ekstazi.version}</version>
-                        <scope>runtime</scope> </dependency>
+                        <scope>runtime</scope>
+                    </dependency>
                 </dependencies>
             </plugin>
 
