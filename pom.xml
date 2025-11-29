@@ -37,18 +37,10 @@
 
                 <executions>
                     <execution>
-                        <id>ekstazi-select</id>
+                        <id>doit</id>
                         <phase>process-test-classes</phase>
                         <goals>
-                        <goal>restore</goal>
                             <goal>select</goal>
-                        </goals>
-                    </execution>
-
-                    <execution>
-                        <id>ekstazi-restore</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
                             <goal>restore</goal>
                         </goals>
                     </execution>
