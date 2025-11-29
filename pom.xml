@@ -17,19 +17,42 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit 4 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.ekstazi</groupId>
+            <artifactId>ekstazi-agent</artifactId>
+            <version>${ekstazi.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>sonatype-public</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+    </repositories>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-public-plugins</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <plugins>
 
-            <!-- Ekstazi MUST run before Surefire -->
             <plugin>
                 <groupId>org.ekstazi</groupId>
                 <artifactId>ekstazi-maven-plugin</artifactId>
@@ -41,21 +64,21 @@
                         <phase>process-test-classes</phase>
                         <goals>
                             <goal>select</goal>
-                            <goal>restore</goal>
+                            <goal>restore</goal> 
                         </goals>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- Surefire must load Ekstazi's excludes file -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
                     <excludesFile>${project.build.testOutputDirectory}/.ekstazi.excludes</excludesFile>
+                    
+                    <forkCount>0</forkCount>
 
-                    <!-- Standard pattern -->
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
