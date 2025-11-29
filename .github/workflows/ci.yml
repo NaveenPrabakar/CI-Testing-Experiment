@@ -18,19 +18,5 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Restore Ekstazi Cache
-        uses: actions/cache@v3
-        with:
-          path: .ekstazi 
-          key: ${{ runner.os }}-maven-ekstazi-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-ekstazi-
-
-      - name: Run Regression Testing
-        run: mvn test
-        
-      - name: Save Ekstazi Cache
-        uses: actions/cache/save@v3
-        with:
-          path: .ekstazi
-          key: ${{ runner.os }}-maven-ekstazi-${{ hashFiles('**/pom.xml') }}
+      - name: Run Regression Tests
+        run: mvn clean test
