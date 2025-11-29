@@ -19,4 +19,4 @@ jobs:
           java-version: '17'
 
       - name: Run Regression Testing 
-        run: mvn clean test -Dekstazi.skip=true
+        run: mvn clean test -Dekstazi.skip=true -Dsurefire.excludesFile=
