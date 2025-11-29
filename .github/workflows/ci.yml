@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-maven-ekstazi-
 
       - name: Run Regression Testing
-        run: mvn clean test
+        run: mvn test
         
       - name: Save Ekstazi Cache
         uses: actions/cache/save@v3
