@@ -34,4 +34,11 @@ public class CalculatorTest {
         Calculator c = new Calculator();
         c.div(5, 0);
     }
+
+    @Test
+public void testMod() {
+    Calculator c = new Calculator();
+    assertEquals(2, c.mod(6, 4));   // 6 % 4 = 2
+}
+
 }
