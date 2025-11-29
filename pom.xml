@@ -13,7 +13,6 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ekstazi.version>5.3.0</ekstazi.version>
     </properties>
 
     <dependencies>
@@ -28,22 +27,12 @@
 
     <build>
         <plugins>
-
-            <!-- Ekstazi MUST run before Surefire -->
-            <plugin>
-                <groupId>org.ekstazi</groupId>
-                <artifactId>ekstazi-maven-plugin</artifactId>
-                <version>${ekstazi.version}</version>
-            </plugin>
-
-            <!-- Surefire must load Ekstazi's excludes file -->
+            <!-- Surefire plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <excludesFile>${project.build.testOutputDirectory}/.ekstazi.excludes</excludesFile>
-
                     <!-- Standard pattern -->
                     <includes>
                         <include>**/*Test.java</include>
@@ -52,7 +41,6 @@
                     <useModulePath>false</useModulePath>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
