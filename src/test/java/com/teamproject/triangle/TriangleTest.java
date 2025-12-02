@@ -1,6 +1,5 @@
 
 package com.teamproject.triangle;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,7 +8,7 @@ public class TriangleTest {
     @Test
     public void testEquilateral() {
         Triangle t = new Triangle();
-        assertEquals("equilateral", t.classify(4, 4, 4));
+        assertEquals("equilateral", t.classify(5, 5, 5));
     }
 
     @Test
@@ -40,5 +39,11 @@ public class TriangleTest {
     public void testInvalidNegative2() {
         Triangle t = new Triangle();
         assertEquals("invalid", t.classify(-1, 4, 5));
+    }
+
+    @Test
+    public void testEquilateral2() {
+        Triangle t = new Triangle();
+        assertEquals("equilateral", t.classify(4, 4, 4));
     }
 }

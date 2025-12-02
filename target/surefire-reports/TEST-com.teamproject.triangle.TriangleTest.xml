@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.teamproject.triangle.TriangleTest" time="0.207" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.teamproject.triangle.TriangleTest" time="0.145" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\nvnpr\AppData\Local\Temp\surefire3867239617462580389\surefirebooter-20251201191551638_3.jar C:\Users\nvnpr\AppData\Local\Temp\surefire3867239617462580389 2025-12-01T19-15-51_380-jvmRun1 surefire-20251201191551638_1tmp surefire_0-20251201191551638_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\nvnpr\AppData\Local\Temp\surefire13654956878736123744\surefirebooter-20251201214518770_3.jar C:\Users\nvnpr\AppData\Local\Temp\surefire13654956878736123744 2025-12-01T21-45-18_541-jvmRun1 surefire-20251201214518770_1tmp surefire_0-20251201214518770_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\nvnpr\OneDrive\Documents\Computer Science\Personal Projects\CI-Testing-Experiment\target\test-classes;C:\Users\nvnpr\OneDrive\Documents\Computer Science\Personal Projects\CI-Testing-Experiment\target\classes;C:\Users\nvnpr\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\nvnpr\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nvnpr\AppData\Local\Temp\surefire3867239617462580389\surefirebooter-20251201191551638_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nvnpr\AppData\Local\Temp\surefire13654956878736123744\surefirebooter-20251201214518770_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.4+8-LTS-274"/>
@@ -58,10 +58,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testEquilateral" classname="com.teamproject.triangle.TriangleTest" time="0.021"/>
+  <testcase name="testEquilateral" classname="com.teamproject.triangle.TriangleTest" time="0.013"/>
   <testcase name="testInvalidNegative" classname="com.teamproject.triangle.TriangleTest" time="0.0"/>
   <testcase name="testInvalidInequality" classname="com.teamproject.triangle.TriangleTest" time="0.0"/>
+  <testcase name="testEquilateral2" classname="com.teamproject.triangle.TriangleTest" time="0.0"/>
   <testcase name="testInvalidNegative2" classname="com.teamproject.triangle.TriangleTest" time="0.001"/>
-  <testcase name="testScalene" classname="com.teamproject.triangle.TriangleTest" time="0.001"/>
+  <testcase name="testScalene" classname="com.teamproject.triangle.TriangleTest" time="0.0"/>
   <testcase name="testIsosceles" classname="com.teamproject.triangle.TriangleTest" time="0.0"/>
 </testsuite>

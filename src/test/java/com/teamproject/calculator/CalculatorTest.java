@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 
 public class CalculatorTest {
 
-    @Test public void testAddCase1(){Calculator c=new Calculator();assertEquals(2,c.add(1,1));}
-    @Test public void testAddCase2(){Calculator c=new Calculator();assertEquals(4,c.add(2,2));}
+    @Test public void testAddCase1(){
+        Calculator c=new Calculator();assertEquals(2,c.add(1,1));}
     @Test public void testAddCase3(){Calculator c=new Calculator();assertEquals(6,c.add(3,3));}
     @Test public void testAddCase4(){Calculator c=new Calculator();assertEquals(8,c.add(4,4));}
     @Test public void testAddCase5(){Calculator c=new Calculator();assertEquals(10,c.add(5,5));}
@@ -5005,4 +5005,6 @@ public class CalculatorTest {
     @Test public void testModCase998(){Calculator c=new Calculator();assertEquals(4,c.mod(1048,9));}
     @Test public void testModCase999(){Calculator c=new Calculator();assertEquals(9,c.mod(1049,10));}
     @Test public void testModCase1000(){Calculator c=new Calculator();assertEquals(0,c.mod(1050,1));}
+    @Test public void testSubCase2000(){Calculator c=new Calculator();assertEquals(5,c.sub(246,241));}
+
 }
