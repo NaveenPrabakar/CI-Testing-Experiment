@@ -9,7 +9,7 @@ public class TriangleTest {
     @Test
     public void testEquilateral() {
         Triangle t = new Triangle();
-        assertEquals("equilateral", t.classify(3, 3, 3));
+        assertEquals("equilateral", t.classify(4, 4, 4));
     }
 
     @Test
@@ -34,5 +34,11 @@ public class TriangleTest {
     public void testInvalidInequality() {
         Triangle t = new Triangle();
         assertEquals("invalid", t.classify(1, 2, 3));  // 1+2 = 3 → invalid
+    }
+
+    @Test
+    public void testInvalidNegative2() {
+        Triangle t = new Triangle();
+        assertEquals("invalid", t.classify(-1, 4, 5));
     }
 }
