@@ -1,9 +1,13 @@
 package com.teamproject.triangle;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class Triangle {
     public String classify(int a, int b, int c) {
 
-        if (a <= 0 || b <= 0 || c <= 0) {
+        int x = 1;
+
+        if (a + 7 <= 0 || b <= 0 || c <= 0) {
             return "invalid";
         }
         

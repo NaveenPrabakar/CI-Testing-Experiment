@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 # Data
 data = {
-    "calcTest_before": [1.741, 1.0, 1.067, 1.329, 1.128],
-    "triTest_before":  [0.002, 0.001, 0.002, 0.001, 0.002],
-    "calcop_after":    [0.056, 0.06, 0.123, 0.055, 0.058],
-    "triop_after":     [0.143, 0.138, 0.352, 0.153, 0.145]
+    "calcTest_before": [1.741, 1.0, 1.067, 1.329, 1.128, 1.138, 1.169, 1.168, 1.057, 1.079],
+    "triTest_before":  [0.002, 0.001, 0.002, 0.001, 0.002, 0.004, 0.006, 0.003, 0.003, 0.002],
+    "calcop_after":    [0.056, 0.06, 0.123, 0.055, 0.058, 0.056, 0.067, 0.067, 0.078, 0.048],
+    "triop_after":     [0.143, 0.138, 0.352, 0.153, 0.145, 0.139, 0.160, 0.131, 0.128, 0.154]
 }
 
 # DataFrame
@@ -27,7 +27,7 @@ plt.figure(figsize=(8,5))
 plt.plot(df.index, df["total_before"], marker='o', label="Total Before Ekstazi")
 plt.plot(df.index, df["total_after"], marker='o', label="Total After Ekstazi")
 
-plt.xlabel("Run Index")
+plt.xlabel("Trial Number")
 plt.ylabel("Time (seconds)")
 plt.title("Before vs After Ekstazi Test Time")
 plt.legend()
