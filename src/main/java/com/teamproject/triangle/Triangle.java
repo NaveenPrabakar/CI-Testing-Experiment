@@ -1,6 +1,4 @@
 package com.teamproject.triangle;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class Triangle {
     public String classify(int a, int b, int c) {
