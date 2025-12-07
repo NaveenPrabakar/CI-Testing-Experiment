@@ -18,5 +18,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Create Surefire excludes file
+        run: |
+          echo "# auto-generated excludes file" > /tmp/myExcludes
+          
       - name: Run Regression Tests
         run: mvn ekstazi:select test
