@@ -18,9 +18,23 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Cache Ekstazi metadata so selective tests are preserved between runs
+      - name: Cache Ekstazi Data
+        uses: actions/cache@v3
+        with:
+          path: .ekstazi
+          key: ekstazi-${{ github.sha }}
+          restore-keys: ekstazi-
+
+      # Prepare the Surefire excludes file (Ekstazi will populate it)
       - name: Create Surefire excludes file
         run: |
-          echo "# auto-generated excludes file" > /tmp/myExcludes
+          echo "" > /tmp/myExcludes
 
+      # Run Ekstazi select and restore manually
+      - name: Ekstazi Select and Restore
+        run: mvn ekstazi:select ekstazi:restore
+
+      # Run tests — Surefire reads the excludes file populated by Ekstazi
       - name: Run Regression Tests
-        run: mvn clean test
+        run: mvn test
